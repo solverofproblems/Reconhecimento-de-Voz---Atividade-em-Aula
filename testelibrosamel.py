@@ -2,10 +2,10 @@ import numpy
 import librosa
 import matplotlib.pyplot as plt
 
-valor_y, amostra_segundo = librosa.load('teste.wav', sr=22050, mono=True)
+lista_audio, amostra_segundo = librosa.load('teste.wav', sr=22050, mono=True)
 
 valores_matriz = librosa.feature.melspectrogram(
-    y=valor_y,
+    y=lista_audio,
     sr=amostra_segundo,
     n_fft=2048,
     hop_length=512,
