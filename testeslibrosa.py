@@ -4,6 +4,11 @@ import librosa, librosa.display
 nome_musica = "teste.wav"
 valor_y, sr= librosa.load(nome_musica, sr=22000, mono=True)
 
+D = librosa.stft(valor_y, n_fft=28, hop_length=200000)
+print(D)
+S_db = librosa.amplitude_to_db(abs(D))
+print(S_db)
+
 #O Sr (samples per second) é responsável por medir quantas vezes o som será medido por segundo. Quanto maior for, mais claro é a representação
 #visual das características do som.
 
